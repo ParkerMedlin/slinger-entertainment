@@ -69,6 +69,21 @@
     from { transform: translateX(100vw); }
     to { transform: translateX(-100%); }
   }
+  #audio-icon {
+    position: fixed;
+    bottom: 20vh;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 12vw;
+    cursor: pointer;
+    animation: pulse 1s ease-in-out infinite;
+    z-index: 10;
+    line-height: 1;
+  }
+  @keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.3; }
+  }
 </style>
 </head>
 <body>
@@ -77,13 +92,20 @@
     <img src="static/weehee.jpeg" alt="">
   </div>
   <div class="marquee marquee-bottom"><span>I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp;</span></div>
+  <div id="audio-icon">&#128264; tap</div>
   <audio id="bgmusic" src="static/Benny Hill Show.mp3" loop></audio>
   <script>
-    document.addEventListener('click', function handler() {
-      document.getElementById('bgmusic').play();
-      document.removeEventListener('click', handler);
-    });
-    document.getElementById('bgmusic').play().catch(function(){});
+    var icon = document.getElementById('audio-icon');
+    var music = document.getElementById('bgmusic');
+    function startMusic() {
+      music.play();
+      icon.style.display = 'none';
+      document.removeEventListener('click', startMusic);
+    }
+    document.addEventListener('click', startMusic);
+    music.play().then(function() {
+      icon.style.display = 'none';
+    }).catch(function(){});
   </script>
 </body>
 </html>
