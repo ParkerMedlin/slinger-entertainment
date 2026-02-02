@@ -24,7 +24,7 @@
 <style>
   * { margin: 0; padding: 0; box-sizing: border-box; }
   body {
-    background: #000;
+    background: #fff;
     overflow: hidden;
     height: 100vh;
     display: flex;
@@ -52,7 +52,7 @@
     left: 0;
     width: 100%;
     white-space: nowrap;
-    color: #fff;
+    color: #000;
     font-size: 8vw;
     text-transform: uppercase;
     letter-spacing: 0.05em;
@@ -77,5 +77,13 @@
     <img src="static/weehee.jpeg" alt="">
   </div>
   <div class="marquee marquee-bottom"><span>I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp;</span></div>
+  <audio id="bgmusic" src="static/Benny Hill Show.mp3" loop></audio>
+  <script>
+    document.addEventListener('click', function handler() {
+      document.getElementById('bgmusic').play();
+      document.removeEventListener('click', handler);
+    });
+    document.getElementById('bgmusic').play().catch(function(){});
+  </script>
 </body>
 </html>
