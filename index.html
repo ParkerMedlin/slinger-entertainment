@@ -1,54 +1,81 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slinger Entertainment</title>
-    <link rel="stylesheet" href="static/index.css">
-    <link rel="icon" type="image/x-icon" href="static/media/favicon_io/favicon.ico">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Slinger Entertainment</title>
+<link rel="icon" type="image/x-icon" href="static/favicon_io/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png">
 
-    <meta property="og:title" content="Slinger Entertainment">
-    <meta property="og:description" content="Experience entertainment, redefined.">
-    <meta property="og:image" content="https://parkermedlin.github.io/slinger-entertainment/static/media/logos/slinger_brandmark.png">
-    <meta property="og:type" content="website">
+<!-- Open Graph -->
+<meta property="og:title" content="Slinger Entertainment">
+<meta property="og:description" content="I like rubbing my belly">
+<meta property="og:image" content="https://livestinthe205.com/static/weehee.jpeg">
+<meta property="og:url" content="https://livestinthe205.com">
+<meta property="og:type" content="website">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Slinger Entertainment">
+<meta name="twitter:description" content="I like rubbing my belly">
+<meta name="twitter:image" content="https://livestinthe205.com/static/weehee.jpeg">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    background: #000;
+    overflow: hidden;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Impact, 'Arial Black', sans-serif;
+  }
+  .image-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .image-container img {
+    width: 50vmin;
+    height: 50vmin;
+    object-fit: contain;
+    animation: spin 4s linear infinite;
+  }
+  @keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+  }
+  .marquee {
+    position: fixed;
+    left: 0;
+    width: 100%;
+    white-space: nowrap;
+    color: #fff;
+    font-size: 8vw;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    overflow: hidden;
+  }
+  .marquee-top { top: 2vh; }
+  .marquee-bottom { bottom: 2vh; }
+  .marquee span {
+    display: inline-block;
+    animation: scroll-left 6s linear infinite;
+    padding-right: 2em;
+  }
+  @keyframes scroll-left {
+    from { transform: translateX(100vw); }
+    to { transform: translateX(-100%); }
+  }
+</style>
 </head>
 <body>
-    <img src="https://parkermedlin.github.io/slinger-entertainment/static/media/logos/slinger_brandmark.png" alt="Slinger Entertainment" style="display:none;">
-    <header class="hero">
-        <img src="static/media/logos/SlingerEntertainmentGroup.png" alt="Slinger Entertainment" class="hero-logo">
-    </header>
-
-    <main class="content">
-        <section class="shows-section">
-            <h2>Upcoming Shows</h2>
-            <div class="carousel">
-                <button class="carousel-btn prev" aria-label="Previous">&lsaquo;</button>
-                <div class="carousel-track">
-                    <a href="https://wl.eventim.us/event/andrea-really/676432?afflky=SaturnBirmingham" target="_blank" rel="noopener noreferrer"><img src="static/media/flyers/current/360 JAN31 Poster.png" alt="360 JAN31"></a>
-                    <a href="https://wl.eventim.us/event/deep-signal/676420?afflky=SaturnBirmingham" target="_blank" rel="noopener noreferrer"><img src="static/media/flyers/current/DeepSignal_Flyer.png" alt="DeepSignal"></a>
-                </div>
-                <button class="carousel-btn next" aria-label="Next">&rsaquo;</button>
-            </div>
-        </section>
-        <section class="contact-section">
-            <h2><a href="mailto:anthony@slingerent.com?cc=asam@slingerent.com,publicity@slingerent.com">Contact Us</a></h2>
-            <!-- <p>Get in touch at <a href="mailto:anthony@slingerent.com">anthony@slingerent.com</a></p> -->
-        </section>
-    </main>
-
-    <footer>
-        <p>&copy; 2026 Slinger Entertainment. All rights reserved.</p>
-    </footer>
-
-    <div class="social-bar">
-        <a href="https://www.instagram.com/slinger.ent/" target="_blank" rel="noopener noreferrer">
-            <img src="static/media/social_link_icons/instagram_icon.png" alt="Instagram">
-        </a>
-        <a href="https://www.facebook.com/p/Slinger-Entertainment-Group-61571718626280/" target="_blank" rel="noopener noreferrer">
-            <img src="static/media/social_link_icons/facebook_icon.png" alt="Facebook">
-        </a>
-    </div>
-
-    <script src="static/index.js"></script>
+  <div class="marquee marquee-top"><span>I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp;</span></div>
+  <div class="image-container">
+    <img src="static/weehee.jpeg" alt="">
+  </div>
+  <div class="marquee marquee-bottom"><span>I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp; I LIKE RUBBING MY BELLY &nbsp;&bull;&nbsp;</span></div>
 </body>
 </html>
