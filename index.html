@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Slinger Entertainment</title>
+
+  <link rel="apple-touch-icon" sizes="180x180" href="static/favicon_io/apple-touch-icon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="static/favicon_io/favicon-32x32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="static/favicon_io/favicon-16x16.png" />
+  <link rel="shortcut icon" href="static/favicon_io/favicon.ico" />
+
+  <style>
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #000070;
+      color: #ffffff;
+      font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+      position: relative;
+      overflow: hidden;
+    }
+
+    /* Tiled pattern rotated 45° */
+    body::before {
+      content: '';
+      position: fixed;
+      inset: -100%;
+      width: 300%;
+      height: 300%;
+      background-image: url('static/tesselatedSlinger.png');
+      background-repeat: repeat;
+      transform: rotate(-45deg);
+      opacity: 0.18;
+      z-index: 0;
+    }
+
+    /* Dark gradient bar through vertical center */
+    body::after {
+      content: '';
+      position: fixed;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        transparent 0%,
+        rgba(0, 0, 0, 0.9) 40%,
+        rgba(0, 0, 0, 0.95) 45%,
+        rgba(0, 0, 0, 0.95) 55%,
+        rgba(0, 0, 0, 0.9) 60%,
+        transparent 100%
+      );
+      z-index: 1;
+    }
+
+    .content {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .logo {
+      width: clamp(260px, 55vw, 700px);
+      margin-bottom: 3rem;
+      filter:
+        drop-shadow(0 0 2px rgba(204, 255, 0, 0.24))
+        drop-shadow(0 0 5px rgba(204, 255, 0, 0.18))
+        drop-shadow(0 0 11px rgba(204, 255, 0, 0.1));
+    }
+
+    .email-btn {
+      display: inline-block;
+      padding: 1rem 2.8rem;
+      border: 1.5px solid #ffffff;
+      color: #ffffff;
+      background: transparent;
+      font-size: 0.95rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      text-decoration: none;
+      cursor: pointer;
+      transition: background 0.2s ease, color 0.2s ease;
+    }
+
+    .email-btn:hover {
+      background: #ffffff;
+      color: #000070;
+    }
+  </style>
+</head>
+<body>
+  <div class="content">
+    <img class="logo" src="static/SlingerEntertainmentGroup.png" alt="Slinger Entertainment" />
+
+    <a
+      class="email-btn"
+      href="mailto:anthony@slingerent.com?cc=sam@slingerent.com,publicity@slingerent.com"
+    >
+      Email Us
+    </a>
+  </div>
+</body>
+</html>
